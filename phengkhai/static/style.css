@@ -2,9 +2,28 @@
 *{
     font-family: 'Helvetica 65 Medium', sans-serif;
 }
-body{
-    background-color: #ff763a !important;
-    background-color: var(--coral-orange);
+#bg {
+  -moz-animation: bg 60s linear infinite;
+  -webkit-animation: bg 60s linear infinite;
+  -ms-animation: bg 60s linear infinite;
+  animation: bg 60s linear infinite;
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+/* Set your background with this */
+
+  background: #348cb2;
+  background-repeat: repeat-x;
+  height: 100%;
+  left: 0;
+  opacity: 1;
+  position: fixed;
+  top: 0;
 }
 
 :root{
