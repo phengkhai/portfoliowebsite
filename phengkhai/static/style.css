@@ -1,0 +1,11 @@
+html {
+    height: 100%;
+}
+body{
+    background-color: #ff763a !important;
+    background-color: var(--coral-orange);
+}
+
+:root{
+    --coral-orange: #ff763a;
+}
