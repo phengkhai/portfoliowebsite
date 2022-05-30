@@ -2,22 +2,15 @@
 *{
     font-family: 'Helvetica 65 Medium', sans-serif;
 }
-#bg {
-
-/* Set your background with this */
-
-  background-color: coral;
-  height: 100%;
-  left: 0;
-  position: fixed;
-  top: 0;
+.bg-orange{
+  background-color: #ff763a;
 }
 
 :root{
     --coral-orange: #ff763a;
 }
 
-.wrapper {
+.sb-wrap {
   display: flex;
   width: 100%;
 }
@@ -61,6 +54,10 @@
 }
   
   /* The button used to open the sidebar */
+  .x-button{
+    width:100%;
+    display:flex;
+  }
   .container {
     display: inline-block;
     cursor: pointer;
@@ -72,6 +69,9 @@
     background-color: #333;
     margin: 6px 0;
     transition: 0.4s;
+  }
+  .textbox{
+    flex-grow: 1;
   }
   
   /* Rotate first bar */
@@ -95,7 +95,6 @@
     transition: margin-left .5s; /* If you want a transition effect */
     padding: 20px;
 }
-  
   /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
     .sidebar {padding-top: 15px;}
