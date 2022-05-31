@@ -167,6 +167,12 @@
                     <div class="col-xs-12 col-sm-5">
                       <div class="info-list">
                         <ul>
+                          {% for post in posts %}
+                            <li>
+                              <span class="title">{post.title}</span>
+                              <span class="value">{post.author}</span>
+                            </li>
+                          {%endfor%}
                           <li>
                             <span class="title">Age</span>
                             <span class="value">21</span>

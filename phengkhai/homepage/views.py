@@ -1,48 +1,19 @@
-from django.shortcuts import render,redirect
-from .forms import ContactForm
-from django.core.mail import send_mail, BadHeaderError
-from django.http import HttpResponse
+# views.py
+from django.shortcuts import render,redirect, get_object_or_404
+from django.views.generic import TemplateView
+from django.template import Context, Template
+from wordle.models import Post
 
-def index(request):
-	if request.method == 'POST':
-		form = ContactForm(request.POST)
-		if form.is_valid():
-			subject = "Website Inquiry" 
-			body = {
-			'organization_name': form.cleaned_data['organization_name'], 
-			'position': form.cleaned_data['position'], 
-			'email': form.cleaned_data['email_address'], 
-			'message':form.cleaned_data['message'], 
-			}
-			message = "\n".join(body.values())
-
-			try:
-				send_mail(subject, message, 'phengkhai@gmail.com', ['phengkhai@gmail.com']) 
-			except BadHeaderError:
-				return HttpResponse('Invalid header found.')
-			return redirect ("main:homepage")
-      
-	form = ContactForm()
-	return render(request, "base.html", {'form':form})
-
-def contact(request):
-	if request.method == 'POST':
-		form = ContactForm(request.POST)
-		if form.is_valid():
-			subject = "Website Inquiry" 
-			body = {
-			'organization_name': form.cleaned_data['organization_name'], 
-			'position': form.cleaned_data['position'], 
-			'email': form.cleaned_data['email_address'], 
-			'message':form.cleaned_data['message'], 
-			}
-			message = "\n".join(body.values())
-
-			try:
-				send_mail(subject, message, 'phengkhai@gmail.com', ['phengkhai@gmail.com']) 
-			except BadHeaderError:
-				return HttpResponse('Invalid header found.')
-			return redirect ("main:homepage")
-      
-	form = ContactForm()
-	return render(request, "base.html", {'form':form})
+# Wrapper view
+class WrapperView(TemplateView):
+    """
+    This is the wrapper view, you include the inline view inside the
+    wrapper view get_context_data.
+	"""
+    model = Post
+    def get_context_data(self, **kwargs):
+        context = super(WrapperView, self).get_context_data(**kwargs)
+		post = get_object_or_404(Post, pk=pk)
+        context['post'] = post
+        # In the wrapper template you can show the html of your inline_view with {{ inline_html|safe }}
+        return context
