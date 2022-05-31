@@ -1,9 +1,7 @@
 from django.urls import path
 from . import views
-from .views import PostList
+from .views import WrapperView
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('', views.contact, name="contact"),
-    path('',PostList.as_view(), name = "post-home"),
+        path('', WrapperView.as_view(), name = "home"),
 ]
