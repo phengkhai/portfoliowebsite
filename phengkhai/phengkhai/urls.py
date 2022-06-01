@@ -23,4 +23,5 @@ urlpatterns = [
     path('',include('homepage.urls')),
     path('admin/', admin.site.urls),
     path('wordle/', include('wordle.urls')),
+    path('projects/',include('portfolioPage.urls'))
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
