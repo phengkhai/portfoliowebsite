@@ -123,7 +123,7 @@
             <div class="lmpixels-arrow-left"><i class="lnr lnr-chevron-left"></i></div>
           </div>
           <!-- End Arrows Nav -->
-          {% block content %}
+          {% block unique %}
           <div class="content-area">
             <div class="animated-sections">
               <!-- Home Subpage -->
@@ -932,14 +932,14 @@
                               <div class="category">
                                 <a href="#" title="View all posts in Design">Design</a>
                               </div>
-                              <a href="blog-post-1.html">
+                              <a href={{post.get_absolute_url}}>
                                 <img src={{post.post_Main_Img.url}} class="size-blog-masonry-image-two-c" alt={{post.title}} title="" />
                                 <div class="mask"></div>
                               </a>
                             </div>
                             <div class="post-info">
                               <div class="post-date">{{post.updated_on}}</div>
-                              <a href="blog-post-1.html">
+                              <a href={{post.get_absolute_url}}>
                                 <h4 class="blog-item-title">{{post.title}}</h4>
                               </a>
                             </div>
@@ -1067,7 +1067,7 @@
               <!-- End of Contact Subpage -->
             </div>
           </div>
-          {% endblock content%}
+          {% endblock unique%}
 
       </div>
     </div>
