@@ -81,8 +81,19 @@ WSGI_APPLICATION = 'phengkhai.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ciba',
+
+        'ENGINE': 'django.db.backends.postgresql',
+
+        'NAME': 'postgres',
+
+        'USER': 'postgres',
+
+        'PASSWORD': 'PKTan9818*',
+
+        'HOST': 'localhost',
+
+        'PORT': '5432',
+
     }
 }
 
