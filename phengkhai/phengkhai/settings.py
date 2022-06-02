@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-qi1ew&pz*@khhns_9a5bd7o@n^_r6ka=@u7kjfftrb%fwkcg3#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['phengkhai.herokuapp.com/']
+ALLOWED_HOSTS = ['.herokuapp.com']
 
 
 # Application definition
@@ -81,8 +81,8 @@ WSGI_APPLICATION = 'phengkhai.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'ciba',
     }
 }
 
