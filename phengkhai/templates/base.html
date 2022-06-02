@@ -818,6 +818,8 @@
                           <li class="active">
                             <a class="filter btn btn-sm btn-link" data-group="{{category.slug}}">{{category.name}}</a>
                           </li>
+                        {%empty%}
+                        <p></p>
                         {%endfor%}
                         </ul>
                         <!-- Portfolio Grid -->
