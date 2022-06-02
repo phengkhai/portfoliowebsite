@@ -1,1 +1,0 @@
-web: gunicorn phengkhai/phengkhai.wsgi --log-file -
