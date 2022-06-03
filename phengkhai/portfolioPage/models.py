@@ -23,7 +23,7 @@ class Projects(models.Model):
     category = models.ForeignKey('Category', on_delete=models.CASCADE, null=True, blank=True)
     desc = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
-    image = models.ImageField(upload_to='product/%Y/%m/%d',blank=True,null=True)
+    image = models.ImageField(upload_to='posts/%Y/%m/%d',blank=True,null=True)
     slug = models.SlugField(unique=True, max_length = 130)
     def __str__(self):
         return self.title
