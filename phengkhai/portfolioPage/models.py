@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from django.conf import settings
 from django.urls import reverse
 from django.utils.text import slugify
+from ckeditor.fields import RichTextField
 
 
 class Category(models.Model):
@@ -21,7 +22,7 @@ class Projects(models.Model):
     author = models.ForeignKey("auth.User",on_delete = models.CASCADE)
     title = models.CharField(max_length=200, unique=True)
     category = models.ForeignKey('Category', on_delete=models.CASCADE, null=True, blank=True)
-    desc = models.TextField()
+    desc = RichTextField()
     created_on = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to='posts/%Y/%m/%d',blank=True,null=True)
     slug = models.SlugField(unique=True, max_length = 130)
