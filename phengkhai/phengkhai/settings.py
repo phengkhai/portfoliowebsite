@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'phengkhai.wsgi.application'
 DATABASES = {
     'default': {
 
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
 
         'NAME': 'postgres',
 
@@ -153,7 +153,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 ADMIN_MEDIA_PREFIX = '/admin-media/'
 
 
-django_heroku.settings(locals())
+#django_heroku.settings(locals())
 import dj_database_url 
 prod_db  =  dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(prod_db)
