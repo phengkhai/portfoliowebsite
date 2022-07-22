@@ -6,6 +6,7 @@ from django.conf import settings
 from django.urls import reverse
 from django.utils.text import slugify
 from ckeditor.fields import RichTextField
+from sqlalchemy import true
 
 
 class Category(models.Model):
@@ -25,7 +26,7 @@ class Projects(models.Model):
     desc = RichTextField()
     created_on = models.DateTimeField(auto_now_add=True)
     image = models.CharField(max_length=200, unique=True)
-    link = models.CharField(max_length=200, unique=True)
+    link = models.CharField(max_length=200, unique=True,null=true)
     slug = models.SlugField(unique=True, max_length = 130)
     def __str__(self):
         return self.title
