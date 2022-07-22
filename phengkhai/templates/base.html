@@ -827,7 +827,7 @@
                           {% for project in projects%}
                           <figure class="item lbaudio" data-groups='["category_all", "{{project.category.slug}}"]'>
                             <div class="portfolio-item-img">
-                              <img src={{project.image.url}} alt="{{project.title}}" title="" />
+                              <img src={{project.image}} alt="{{project.title}}" title="" />
                               <a href="{{project.get_absolute_url}}" class="lightbox mfp-iframe" title="SoundCloud Audio"></a>
                             </div>
                             <i class="fa fa-volume-up"></i>
@@ -870,7 +870,7 @@
                                 <a href="#" title="View all posts in Design">Design</a>
                               </div>
                               <a href={{post.get_absolute_url}}>
-                                <img src={{post.post_Main_Img.url}} class="size-blog-masonry-image-two-c" alt={{post.title}} title="" />
+                                <img src={{post.post_Main_Img}} class="size-blog-masonry-image-two-c" alt={{post.title}} title="" />
                                 <div class="mask"></div>
                               </a>
                             </div>
