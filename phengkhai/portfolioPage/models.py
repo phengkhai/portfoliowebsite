@@ -6,7 +6,7 @@ from django.conf import settings
 from django.urls import reverse
 from django.utils.text import slugify
 from ckeditor.fields import RichTextField
-from sqlalchemy import true
+
 
 
 class Category(models.Model):
