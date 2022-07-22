@@ -26,7 +26,7 @@ class Projects(models.Model):
     desc = RichTextField()
     created_on = models.DateTimeField(auto_now_add=True)
     image = models.CharField(max_length=200, unique=True)
-    #link = models.CharField(max_length=200, unique=True,null=True)
+    link = models.CharField(max_length=200, null=True)
     slug = models.SlugField(unique=True, max_length = 130)
     def __str__(self):
         return self.title
